@@ -11,9 +11,11 @@ function App() {
 
   // localStorage.setItem('data', JSON.stringify({}))
 
+  const basename = process.env.NODE_ENV === "production" ? "/react-app" : "/";
+
   return (    
     <GlobalStateProvider>
-      <Router>
+      <Router basename={basename}>
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
